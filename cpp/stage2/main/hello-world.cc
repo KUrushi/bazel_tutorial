@@ -1,19 +1,17 @@
-#include "hello-greet.h"
 #include <ctime>
-#include <string>
 #include <iostream>
+#include <string>
 
-void print_localtime()
-{
+#include "hello-greet.h"
+
+void print_localtime() {
     std::time_t result = std::time(nullptr);
     std::cout << std::asctime(std::localtime(&result));
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     std::string who = "world";
-    if (argc > 1)
-    {
+    if (argc > 1) {
         who = argv[1];
     }
 
