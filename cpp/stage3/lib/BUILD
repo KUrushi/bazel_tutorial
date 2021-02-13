@@ -5,5 +5,5 @@ cc_library(
     name = "hello-time",
     srcs = ["hello-time.cc"],
     hdrs = ["hello-time.h"],
-    visibility = ["//main:__pkg__"]  # ここで指定したtargetからの依存を許可する
+    visibility = ["//visibility:public"]  # publicにして外部からでもhello-timeを参照できるようにする
 )
