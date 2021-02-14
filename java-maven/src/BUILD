@@ -1,6 +1,6 @@
 load("@rules_java//java:defs.bzl", "java_binary", "java_library", "java_test")
 
-package(defaule_visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:public"])
 
 java_library(
     name = "java-maven-lib",
@@ -17,10 +17,10 @@ java_binary(
 java_test(
     name = "tests",
     srcs = glob(["src/test/java/com/example/myproject/*.java"]),
-    dep = [
+    test_class = "com.example.myproject.TestApp",
+    deps = [
         ":java-maven-lib",
         "@maven//:com_google_guava_guava",
         "@maven//:junit_junit",
     ],
-    test_class = "com.example.myproject.TestApp",
 )
