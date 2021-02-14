@@ -1,0 +1,6 @@
+workspace(name = "stage4")
+
+local_repository(
+    name = "stage3",
+    path = "../stage3",
+)

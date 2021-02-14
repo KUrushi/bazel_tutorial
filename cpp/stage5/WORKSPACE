@@ -1,0 +1,5 @@
+new_loca_reposity(
+    name = "externals",
+    build_file = "externals.BUILD",
+    path = "../externals",
+)
