@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
-      - name: Build the code
+      - name: Cache bazel
         uses: actions/checkout@v2
         env:
           cache-name: bazel-cache
