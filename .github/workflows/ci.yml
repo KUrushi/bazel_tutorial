@@ -6,8 +6,17 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
+      - name: Build the code
+        uses: actions/checkout@v2
+        env:
+          cache-name: bazel-cache
+        with:
+          path: ~/.cache/bazelisk
+          key: ${{runner.os}}-${{env.cache-name}}-${{github.ref}}
+          restore-keys: |
+            ${{runner.os}}-${{env.cache-name}}-development
+
       - uses: actions/checkout@v2
       - name: Build the code
         run: bazel build //...
-
         
