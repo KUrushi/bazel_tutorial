@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Cache bazel
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         env:
           cache-name: bazel-cache
         with:
@@ -16,7 +16,7 @@ jobs:
             ~/.cache/bazel
           key: ${{runner.os}}-${{env.cache-name}}
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build the code
         run: bazel build //...
         
